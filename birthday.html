@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HAPPY BIRTHDAY THE BEST MOM IN THE WORLD 💜</title>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #08050d;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HUJAN KELOPAK BUNGA
+   MUNCUL DI SEMUA HALAMAN
+========================= */
+
+#petal-container {
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+
+/* Bentuk dasar kelopak */
+
+.petal {
+    position: absolute;
+
+    top: -40px;
+
+    width: 13px;
+    height: 19px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0c9ff,
+            #c77cff 55%,
+            #8f3cc4
+        );
+
+    border-radius:
+        70% 30% 70% 30%;
+
+    opacity: .75;
+
+    filter:
+        drop-shadow(0 0 4px #c77cff88);
+
+    animation:
+        petalFall linear infinite;
+
+    transform-origin: center;
+}
+
+
+/* Bentuk bagian kecil pada kelopak */
+
+.petal::after {
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+    height: 9px;
+
+    left: 5px;
+    top: 4px;
+
+    border-radius: 50%;
+
+    background: #f4dcff;
+
+    opacity: .45;
+}
+
+
+/* Animasi jatuh */
+
+@keyframes petalFall {
+
+    0% {
+        transform:
+            translate3d(0, -40px, 0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    8% {
+        opacity: .8;
+    }
+
+    25% {
+        transform:
+            translate3d(35px, 25vh, 0)
+            rotate(100deg);
+    }
+
+    50% {
+        transform:
+            translate3d(-35px, 50vh, 0)
+            rotate(220deg);
+    }
+
+    75% {
+        transform:
+            translate3d(30px, 75vh, 0)
+            rotate(300deg);
+    }
+
+    92% {
+        opacity: .65;
+    }
+
+    100% {
+        transform:
+            translate3d(-20px, 110vh, 0)
+            rotate(420deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* Variasi ukuran */
+
+.petal.small {
+    width: 8px;
+    height: 13px;
+    opacity: .55;
+}
+
+.petal.medium {
+    width: 12px;
+    height: 18px;
+}
+
+.petal.large {
+    width: 16px;
+    height: 23px;
+    opacity: .85;
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+#countdown {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #32104d 0%,
+            #100719 45%,
+            #050308 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* TEKS LATAR */
+
+.terminal {
+    position: absolute;
+    inset: 0;
+
+    padding: 15px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 2.2;
+
+    color: #b66cff;
+
+    opacity: .16;
+
+    overflow: hidden;
+
+    text-align: center;
+}
+
+.terminal span {
+    display: block;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* COUNTDOWN */
+
+.count-content {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+.count-label {
+    color: #d5a8ff;
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+}
+
+.count-number {
+    margin: 15px 0;
+
+    font-size:
+        clamp(100px, 25vw, 180px);
+
+    font-weight: 900;
+
+    color: #b45cff;
+
+    text-shadow:
+        0 0 10px #b45cff,
+        0 0 30px #8f2cff,
+        0 0 80px #6d16c9;
+
+    animation:
+        pulse .8s infinite alternate;
+}
+
+@keyframes pulse {
+
+    to {
+        transform:
+            scale(1.08);
+    }
+
+}
+
+
+/* =========================
+   BIRTHDAY REVEAL
+========================= */
+
+#reveal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 90;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #4a1764,
+            #110617 70%
+        );
+
+    overflow: hidden;
+}
+
+.reveal-content {
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake {
+    width: 180px;
+    height: 130px;
+
+    position: relative;
+
+    margin: auto;
+}
+
+.cake-body {
+    position: absolute;
+
+    bottom: 10px;
+    left: 15px;
+
+    width: 150px;
+    height: 65px;
+
+    border-radius:
+        10px 10px 25px 25px;
+
+    background:
+        linear-gradient(
+            #c46cff,
+            #6e199e
+        );
+
+    box-shadow:
+        0 10px 30px #a84cff66;
+}
+
+.cake-top {
+    position: absolute;
+
+    top: 45px;
+    left: 15px;
+
+    width: 150px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #e8c8ff;
+}
+
+.candle {
+    position: absolute;
+
+    top: 8px;
+    left: 85px;
+
+    width: 10px;
+    height: 45px;
+
+    background: #f1d9ff;
+
+    border-radius: 5px;
+
+    z-index: 2;
+}
+
+.flame {
+    position: absolute;
+
+    width: 15px;
+    height: 22px;
+
+    top: -20px;
+    left: -2px;
+
+    border-radius: 50%;
+
+    background: #ffd45c;
+
+    box-shadow:
+        0 0 10px #ffd45c,
+        0 0 30px #b45cff;
+
+    animation:
+        flame .5s infinite alternate;
+}
+
+@keyframes flame {
+
+    to {
+        transform:
+            scale(1.2);
+    }
+
+}
+
+.happy {
+    margin-top: 20px;
+
+    font-size:
+        clamp(45px, 10vw, 90px);
+
+    font-weight: 900;
+
+    color: #c27aff;
+
+    text-shadow:
+        0 0 15px #c27aff,
+        0 0 40px #8f2cff;
+}
+
+.adit {
+    margin-top: 5px;
+
+    font-size: 25px;
+
+    letter-spacing: 5px;
+
+    color: #ead2ff;
+}
+
+
+/* =========================
+   FLOWER DECORATION
+========================= */
+
+.flower {
+    position: absolute;
+
+    font-size: 45px;
+
+    opacity: .8;
+
+    animation:
+        flowerFloat 4s ease-in-out infinite;
+}
+
+.flower1 {
+    left: 10%;
+    top: 18%;
+}
+
+.flower2 {
+    right: 10%;
+    top: 25%;
+
+    animation-delay: 1s;
+}
+
+.flower3 {
+    left: 15%;
+    bottom: 18%;
+
+    animation-delay: 2s;
+}
+
+.flower4 {
+    right: 15%;
+    bottom: 15%;
+
+    animation-delay: 3s;
+}
+
+@keyframes flowerFloat {
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(8deg);
+    }
+
+}
+
+
+/* =========================
+   FIREWORKS
+========================= */
+
+.firework {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #c27aff;
+
+    box-shadow:
+        0 0 10px #c27aff,
+        0 0 25px #8f2cff;
+
+    animation:
+        boom 1.8s infinite;
+}
+
+.firework::before,
+.firework::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 100px;
+
+    background:
+        linear-gradient(
+            transparent,
+            #c27aff,
+            transparent
+        );
+
+    left: 0;
+    top: -48px;
+}
+
+.firework::after {
+    transform: rotate(90deg);
+}
+
+.f1 {
+    left: 15%;
+    top: 25%;
+}
+
+.f2 {
+    right: 15%;
+    top: 20%;
+
+    animation-delay: .5s;
+}
+
+.f3 {
+    left: 25%;
+    bottom: 20%;
+
+    animation-delay: 1s;
+}
+
+.f4 {
+    right: 25%;
+    bottom: 25%;
+
+    animation-delay: 1.4s;
+}
+
+@keyframes boom {
+
+    0%, 100% {
+        transform: scale(.2);
+        opacity: 0;
+    }
+
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(1.5);
+        opacity: .7;
+    }
+
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+#gift {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 80;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #351344,
+            #07030a 70%
+        );
+}
+
+.gift-box {
+    position: relative;
+
+    width: 150px;
+    height: 120px;
+
+    margin-bottom: 30px;
+
+    cursor: pointer;
+
+    animation:
+        giftFloat 2s infinite ease-in-out;
+}
+
+@keyframes giftFloat {
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+
+}
+
+.gift-body {
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 150px;
+    height: 90px;
+
+    background:
+        linear-gradient(
+            #a94ce6,
+            #67208d
+        );
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 0 30px #a94cff66;
+}
+
+.gift-lid {
+
+    position: absolute;
+
+    top: 20px;
+    left: -8px;
+
+    width: 166px;
+    height: 30px;
+
+    background: #c275ff;
+
+    border-radius: 7px;
+
+    z-index: 2;
+}
+
+.ribbon-v {
+
+    position: absolute;
+
+    width: 20px;
+    height: 120px;
+
+    left: 65px;
+
+    background: #f0d5ff;
+
+    z-index: 3;
+}
+
+.ribbon-h {
+
+    position: absolute;
+
+    width: 166px;
+    height: 18px;
+
+    left: -8px;
+    top: 75px;
+
+    background: #f0d5ff;
+
+    z-index: 3;
+}
+
+.gift-text {
+
+    color: #e6c5ff;
+
+    font-size: 16px;
+
+    animation:
+        blink 1.5s infinite;
+}
+
+@keyframes blink {
+
+    50% {
+        opacity: .4;
+    }
+
+}
+
+
+/* =========================
+   FLOWER EXPLOSION
+========================= */
+
+#tkrExplosion {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 70;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    background: #08050d;
+}
+
+.tool {
+
+    position: absolute;
+
+    font-size: 45px;
+
+    opacity: 0;
+}
+
+.tool:nth-child(1) {
+    animation:
+        fly1 2s forwards;
+}
+
+.tool:nth-child(2) {
+    animation:
+        fly2 2s forwards;
+}
+
+.tool:nth-child(3) {
+    animation:
+        fly3 2s forwards;
+}
+
+.tool:nth-child(4) {
+    animation:
+        fly4 2s forwards;
+}
+
+.tool:nth-child(5) {
+    animation:
+        fly5 2s forwards;
+}
+
+.tool:nth-child(6) {
+    animation:
+        fly6 2s forwards;
+}
+
+@keyframes fly1 {
+
+    to {
+
+        transform:
+            translate(-220px, -180px)
+            rotate(360deg);
+
+        opacity: 1;
+    }
+
+}
+
+@keyframes fly2 {
+
+    to {
+
+        transform:
+            translate(220px, -150px)
+            rotate(-360deg);
+
+        opacity: 1;
+    }
+
+}
+
+@keyframes fly3 {
+
+    to {
+
+        transform:
+            translate(-250px, 150px)
+            rotate(300deg);
+
+        opacity: 1;
+    }
+
+}
+
+@keyframes fly4 {
+
+    to {
+
+        transform:
+            translate(240px, 170px)
+            rotate(-300deg);
+
+        opacity: 1;
+    }
+
+}
+
+@keyframes fly5 {
+
+    to {
+
+        transform:
+            translate(-120px, 230px)
+            rotate(250deg);
+
+        opacity: 1;
+    }
+
+}
+
+@keyframes fly6 {
+
+    to {
+
+        transform:
+            translate(130px, -230px)
+            rotate(-250deg);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   MAIN WEBSITE
+========================= */
+
+#main {
+    display: none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #3b1450,
+            #08050d 70%
+        );
+}
+
+.hero h1 {
+
+    font-size:
+        clamp(45px, 11vw, 90px);
+
+    color: #c27aff;
+
+    text-shadow:
+        0 0 15px #c27aff,
+        0 0 40px #8f2cff;
+}
+
+.hero h2 {
+
+    margin-top: 8px;
+
+    font-size: 28px;
+
+    letter-spacing: 4px;
+
+    color: #ead2ff;
+}
+
+.typing {
+
+    margin: 30px auto 0;
+
+    max-width: 650px;
+
+    min-height: 60px;
+
+    color: #ddd;
+
+    line-height: 1.7;
+}
+
+.cursor {
+
+    border-right:
+        2px solid #c27aff;
+
+    animation:
+        cursor .7s infinite;
+}
+
+@keyframes cursor {
+
+    50% {
+        border-color: transparent;
+    }
+
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.section {
+
+    min-height: 100vh;
+
+    padding: 100px 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background: #09060d;
+}
+
+.section:nth-child(even) {
+
+    background:
+        radial-gradient(
+            circle,
+            #281034,
+            #08050d 70%
+        );
+}
+
+.container {
+
+    width:
+        min(850px, 100%);
+}
+
+.title {
+
+    color: #c27aff;
+
+    font-size: 40px;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 20px #9d42e8;
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo {
+
+    width:
+        min(350px, 90%);
+
+    margin: auto;
+
+    padding: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0dcff,
+            #d2a7ed
+        );
+
+    transform:
+        rotate(-2deg);
+
+    box-shadow:
+        0 10px 40px #000;
+}
+
+.photo img {
+
+    width: 100%;
+
+    display: block;
+}
+
+
+/* =========================
+   MOM CARD
+========================= */
+
+.mom-card {
+
+    padding: 35px;
+
+    border:
+        1px solid #9d55c9;
+
+    border-radius: 25px;
+
+    background:
+        rgba(170, 90, 220, .06);
+
+    box-shadow:
+        0 0 30px #9d42e822;
+}
+
+.flower-icon {
+
+    font-size: 70px;
+
+    animation:
+        flowerSpin 5s linear infinite;
+}
+
+@keyframes flowerSpin {
+
+    0% {
+        transform:
+            rotate(0deg);
+    }
+
+    100% {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+.mom-card h2 {
+
+    color: #e1bdff;
+
+    line-height: 1.5;
+}
+
+.mom-card p {
+
+    color: #ddd;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   SPOTIFY
+========================= */
+
+.spotify-subtitle {
+
+    color: #aaa;
+
+    margin-bottom: 25px;
+
+    line-height: 1.6;
+}
+
+.spotify-player {
+
+    width:
+        min(650px, 100%);
+
+    margin: 30px auto 0;
+}
+
+.spotify-player iframe {
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 12px;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    border:
+        1px solid #75409a;
+
+    background:
+        linear-gradient(
+            135deg,
+            #160d1e,
+            #21102c
+        );
+
+    color: #eee;
+
+    line-height: 1.9;
+
+    box-shadow:
+        0 0 30px #8f2cff18;
+}
+
+
+/* =========================
+   ROSE DECORATION
+========================= */
+
+.rose-decoration {
+
+    margin-top: 25px;
+
+    font-size: 35px;
+
+    letter-spacing: 12px;
+}
+
+
+/* =========================
+   NOTIFICATION
+========================= */
+
+.notification {
+
+    position: fixed;
+
+    right: 20px;
+    top: 25px;
+
+    z-index: 200;
+
+    width:
+        min(340px, calc(100% - 40px));
+
+    padding: 15px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(30, 18, 38, .96);
+
+    border:
+        1px solid #71458a;
+
+    box-shadow:
+        0 8px 30px #000;
+
+    display: none;
+
+    align-items: center;
+
+    gap: 15px;
+
+    animation:
+        notification .5s ease;
+}
+
+.notification-icon {
+
+    font-size: 35px;
+}
+
+.notification-text {
+
+    text-align: left;
+}
+
+.notification-title {
+
+    font-size: 12px;
+
+    color: #bca4c9;
+}
+
+.notification-message {
+
+    margin-top: 4px;
+
+    font-weight: bold;
+
+    color: #e3c8f2;
+}
+
+@keyframes notification {
+
+    from {
+
+        transform:
+            translateY(-100px);
+
+        opacity: 0;
+    }
+
+    to {
+
+        transform:
+            translateY(0);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================
+   END
+========================= */
+
+.end {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #431557,
+            #08050d 70%
+        );
+}
+
+.end h2 {
+
+    color: #d09aff;
+
+    font-size:
+        clamp(35px, 8vw, 60px);
+
+    text-shadow:
+        0 0 25px #9d42e8;
+}
+
+.end p {
+
+    margin-top: 20px;
+
+    color: #dfc6ed;
+}
+
+.end-roses {
+
+    margin-top: 25px;
+
+    font-size: 40px;
+
+    letter-spacing: 8px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .title {
+        font-size: 32px;
+    }
+
+    .mom-card,
+    .letter {
+        padding: 25px 20px;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
+
+    .notification {
+
+        right: 10px;
+        top: 15px;
+
+        width:
+            calc(100% - 20px);
+    }
+
+    .flower {
+        font-size: 30px;
+    }
+
+    .petal {
+        width: 10px;
+        height: 15px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HUJAN KELOPAK
+========================= -->
+
+<div id="petal-container">
+
+    <div class="petal" style="left: 3%; animation-duration: 7s; animation-delay: -2s;"></div>
+
+    <div class="petal medium" style="left: 9%; animation-duration: 9s; animation-delay: -6s;"></div>
+
+    <div class="petal small" style="left: 15%; animation-duration: 6s; animation-delay: -1s;"></div>
+
+    <div class="petal large" style="left: 21%; animation-duration: 10s; animation-delay: -7s;"></div>
+
+    <div class="petal" style="left: 27%; animation-duration: 8s; animation-delay: -4s;"></div>
+
+    <div class="petal small" style="left: 33%; animation-duration: 7s; animation-delay: -5s;"></div>
+
+    <div class="petal medium" style="left: 39%; animation-duration: 11s; animation-delay: -9s;"></div>
+
+    <div class="petal" style="left: 45%; animation-duration: 8s; animation-delay: -3s;"></div>
+
+    <div class="petal large" style="left: 51%; animation-duration: 10s; animation-delay: -8s;"></div>
+
+    <div class="petal small" style="left: 57%; animation-duration: 6s; animation-delay: -2s;"></div>
+
+    <div class="petal medium" style="left: 63%; animation-duration: 9s; animation-delay: -6s;"></div>
+
+    <div class="petal" style="left: 69%; animation-duration: 7s; animation-delay: -4s;"></div>
+
+    <div class="petal large" style="left: 75%; animation-duration: 11s; animation-delay: -10s;"></div>
+
+    <div class="petal small" style="left: 81%; animation-duration: 8s; animation-delay: -5s;"></div>
+
+    <div class="petal medium" style="left: 87%; animation-duration: 9s; animation-delay: -7s;"></div>
+
+    <div class="petal" style="left: 93%; animation-duration: 6s; animation-delay: -3s;"></div>
+
+</div>
+
+
+<!-- =========================
+     COUNTDOWN
+========================= -->
+
+<div id="countdown">
+
+    <div class="terminal" id="terminal"></div>
+
+    <div class="count-content">
+
+        <div class="count-label">
+            BIRTHDAY SURPRISE
+        </div>
+
+        <div class="count-number" id="number">
+            10
+        </div>
+
+        <div class="count-label">
+            PREPARING SOMETHING SPECIAL...
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     BIRTHDAY REVEAL
+========================= -->
+
+<div id="reveal">
+
+    <div class="flower flower1">🌹</div>
+    <div class="flower flower2">✨</div>
+    <div class="flower flower3">✨</div>
+    <div class="flower flower4">🌹</div>
+
+    <div class="firework f1"></div>
+    <div class="firework f2"></div>
+    <div class="firework f3"></div>
+    <div class="firework f4"></div>
+
+
+    <div class="reveal-content">
+
+        <div class="cake">
+
+            <div class="candle">
+
+                <div class="flame"></div>
+
+            </div>
+
+            <div class="cake-top"></div>
+
+            <div class="cake-body"></div>
+
+        </div>
+
+
+        <div class="happy">
+            HAPPY BIRTHDAY
+        </div>
+
+
+        <div class="adit">
+            THE BEST MOM IN THE WORLD
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     GIFT
+========================= -->
+
+<div id="gift">
+
+    <div class="flower flower1">🌹</div>
+    <div class="flower flower2">🌸</div>
+
+    <div class="gift-box"
+         onclick="openGift()">
+
+        <div class="gift-lid"></div>
+
+        <div class="gift-body"></div>
+
+        <div class="ribbon-v"></div>
+
+        <div class="ribbon-h"></div>
+
+    </div>
+
+
+    <div class="gift-text">
+
+        Tap the gift box to open your surprise 💜
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FLOWER EXPLOSION
+========================= -->
+
+<div id="tkrExplosion">
+
+    <div class="tool">🌹</div>
+    <div class="tool">🌸</div>
+    <div class="tool">💐</div>
+    <div class="tool">🌷</div>
+    <div class="tool">🪻</div>
+    <div class="tool">✨</div>
+
+</div>
+
+
+<!-- =========================
+     MAIN WEBSITE
+========================= -->
+
+<div id="main">
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div>
+
+            <h1>
+                HAPPY BIRTHDAY
+            </h1>
+
+            <h2>
+                THE BEST MOM IN THE WORLD 💜
+            </h2>
+
+
+            <div class="typing">
+
+                <span id="typingText"></span>
+
+                <span class="cursor">
+                    &nbsp;
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PHOTO -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="title">
+                🌹 A Beautiful Memory
+            </div>
+
+
+            <div class="photo">
+
+                <img
+                    src="IMG-20260821-WA0173.jpg"
+                    alt="Mom"
+                >
+
+            </div>
+
+
+            <div class="rose-decoration">
+                🌹 ✨ 🌹
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- MOM -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="title">
+                💐 For The Best Mom
+            </div>
+
+
+            <div class="mom-card">
+
+                <div class="flower-icon">
+                    🌹
+                </div>
+
+
+                <h2>
+
+                    A mother is the
+                    heart of every home.
+
+                </h2>
+
+
+                <br>
+
+
+                <p>
+
+                    Thank you for being 
+                    someone who always
+                    gives affection,attention
+                    and strength
+
+                    <br><br>
+
+                    May all the good you give return to you in the form of multiplied happiness
+                    you give return to 
+                    you in the form of
+                    multiplied happiness
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SONG -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="title">
+                🎵 A SONG FOR YOU
+            </div>
+
+
+            <p class="spotify-subtitle">
+
+                A special song for the 
+                greatest mom in the world 💜
+
+            </p>
+
+
+            <div class="spotify-player">
+
+                <iframe
+
+                    src=https://open.spotify.com/embed/track/561jH07mF1jHuk7KlaeF0s?utm_source=generator"
+
+                    width="100%"
+
+                    height="152"
+
+                    frameborder="0"
+
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+
+                    loading="lazy">
+
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- LETTER -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="title">
+                💌 A Letter For Mom
+            </div>
+
+
+            <div class="letter">
+
+                Happy birthday the best mom in the world! 💜🌹
+
+                <br><br>
+
+                Pertama aku teh gatau harus manggil apa
+                entah ibu,mama,mommy,mamah mertua atau apa
+                aku calon mantumu mahhh,prank.bercandyaaaa
+                maapin sok asikkk, ketularan putri 
+                kesayanganmu ituuu
+
+                <br><br>
+
+                but, walaupun dirimu bukan ibu kandungku,
+                kau tetep seorang ibu untuk anak anakmu.
+                (maapin alay dikitt) terimakasih sudah
+                menjadi ibu hebat,yang selalu memberikan
+                perhatian,kasih sayang dan kekuatan untuk
+                anak anakmuu.
+
+                <br><br>
+
+                ada surat untuk seorang ibu hebat
+                dari putrinya nihh,putri yang mulai
+                beranjak dewasa berkat cinta dan kasih
+                dari ibu dan ayah yang sangattt hebat.
+
+                <br><br>
+
+                Semoga tahun ini membawa banyak berkah dan 
+                senyuman untuk Mama.Aku sayang Mama hari ini, 
+                esok, dan selamanya.
+
+                <br><br>
+
+                Aku sayang Mama. 💜
+
+                <br><br>
+
+                sekali lagi Happy Birthday The Best Mom In The World! 🎂🌹✨
+
+            </div>
+
+
+            <div class="rose-decoration">
+                🌹 🌹 🌹
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- END -->
+
+    <section class="end">
+
+        <div>
+
+            <h2>
+                Happy Birthday, Mama 💜
+            </h2>
+
+
+            <p>
+                Thank you for being the
+                most beautiful part of our home.
+            </p>
+
+
+            <div class="end-roses">
+
+                🌹 🌸 🌹 🌸 🌹
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+
+<!-- =========================
+     NOTIFICATION
+========================= -->
+
+<div
+    class="notification"
+    id="notification"
+>
+
+    <div class="notification-icon">
+        🌹
+    </div>
+
+
+    <div class="notification-text">
+
+        <div class="notification-title">
+            A little reminder
+        </div>
+
+
+        <div class="notification-message">
+
+            Mama deserves all the
+            happiness in the world 💜
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+/* =========================
+   COUNTDOWN BACKGROUND TEXT
+========================= */
+
+const terminal =
+    document.getElementById("terminal");
+
+
+const terminalLines = [
+
+    "FOR YOU, THE BEST MOM IN THE WORLD",
+
+    "FOR YOU, THE BEST MOM IN THE WORLD",
+
+    "FOR YOU, THE BEST MOM IN THE WORLD",
+
+    "WITH LOVE FOR THE BEST MOM",
+
+    "FOR THE MOST WONDERFUL MOM",
+
+    "A LITTLE SURPRISE MADE WITH LOVE",
+
+    "FOR YOU, MOM 💜"
+
+];
+
+
+for (let i = 0; i < 100; i++) {
+
+    const span =
+        document.createElement("span");
+
+
+    span.textContent =
+        terminalLines[
+            Math.floor(
+                Math.random() *
+                terminalLines.length
+            )
+        ];
+
+
+    terminal.appendChild(span);
+
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+let number = 10;
+
+
+const countdown =
+    document.getElementById("countdown");
+
+
+const countNumber =
+    document.getElementById("number");
+
+
+const timer =
+    setInterval(() => {
+
+        number--;
+
+
+        if (number <= 0) {
+
+            clearInterval(timer);
+
+
+            countdown.style.display =
+                "none";
+
+
+            showReveal();
+
+        }
+
+        else {
+
+            countNumber.textContent =
+                number;
+
+        }
+
+    }, 1000);
+
+
+/* =========================
+   HAPPY BIRTHDAY REVEAL
+========================= */
+
+function showReveal() {
+
+    const reveal =
+        document.getElementById("reveal");
+
+
+    reveal.style.display =
+        "flex";
+
+
+    setTimeout(() => {
+
+        reveal.style.display =
+            "none";
+
+
+        document.getElementById("gift")
+            .style.display =
+            "flex";
+
+
+    }, 5000);
+
+}
+
+
+/* =========================
+   OPEN GIFT
+========================= */
+
+function openGift() {
+
+    const gift =
+        document.getElementById("gift");
+
+
+    gift.style.display =
+        "none";
+
+
+    const explosion =
+        document.getElementById(
+            "tkrExplosion"
+        );
+
+
+    explosion.style.display =
+        "flex";
+
+
+    setTimeout(() => {
+
+        explosion.style.display =
+            "none";
+
+
+        document.getElementById("main")
+            .style.display =
+            "block";
+
+
+        startTyping();
+
+
+    }, 2300);
+
+}
+
+
+/* =========================
+   TYPING ANIMATION
+========================= */
+
+const message =
+
+    "Happy birthday,  Untuk ibu terhebat yang telah merawat putra putrinya.Ibu yang tak pernah berkeluh kesah walaupun lelah, ibu yang tetap bekerja keras walaupun sakit, ibu yang selalu sabar menghadapi sifat dan sikap putra putrinya yang terkadang membangkang dan lainnya terima kasihhh ibuu. 💜";
+
+
+let typingIndex = 0;
+
+
+function startTyping() {
+
+    const text =
+        document.getElementById(
+            "typingText"
+        );
+
+
+    const typing =
+        setInterval(() => {
+
+
+            text.textContent +=
+                message[typingIndex];
+
+
+            typingIndex++;
+
+
+            if (
+                typingIndex >=
+                message.length
+            ) {
+
+                clearInterval(typing);
+
+            }
+
+
+        }, 45);
+
+}
+
+
+/* =========================
+   SCROLL NOTIFICATION
+========================= */
+
+let notificationShown =
+    false;
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+
+        if (
+            notificationShown
+        ) return;
+
+
+        const scroll =
+            window.scrollY;
+
+
+        const height =
+            document.documentElement
+                .scrollHeight
+            -
+            window.innerHeight;
+
+
+        if (height <= 0) return;
+
+
+        const percentage =
+            scroll / height;
+
+
+        if (
+            percentage >= 0.35
+        ) {
+
+
+            notificationShown =
+                true;
+
+
+            const notification =
+                document.getElementById(
+                    "notification"
+                );
+
+
+            notification.style.display =
+                "flex";
+
+
+            setTimeout(() => {
+
+                notification.style.display =
+                    "none";
+
+            }, 4500);
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
